@@ -1,79 +1,106 @@
-# Pideci | Restaurant Ordering & Management
+# 🥙 Pideci Sitesi | Online Sipariş ve Restoran Yönetimi
 
-**TR:** Taş fırın restoranları için örnek ürün kataloğu, müşteri sipariş ekranı ve yönetici paneli içeren full-stack uygulama. Mevcut kırmızı-beyaz marka kimliği korunarak geliştirilmiştir.
+[![English](https://img.shields.io/badge/English-Read%20in%20English-2563eb?style=for-the-badge)](README_EN.md)
+[![GitHub Actions](https://github.com/fathylmaz/pideci-fullstack/actions/workflows/ci.yml/badge.svg)](https://github.com/fathylmaz/pideci-fullstack/actions/workflows/ci.yml)
 
-**EN:** Full-stack restaurant menu, ordering, and administration platform. Preserves the original red-and-white visual identity.
+**Pideci Sitesi**, taş fırın restoranları için geliştirilen, müşterilerin ürünleri inceleyip sipariş oluşturabildiği ve işletmenin menüsünü, fiyatlarını, stoklarını ve siparişlerini tek panelden yönetebildiği **full-stack restoran yönetim ve online sipariş uygulamasıdır**. Kırmızı-beyaz görsel kimliği korunarak mobil ve masaüstü ekranlar için geliştirilmiştir.
 
-[🇹🇷 Türkçe kullanım rehberi](README_TR.md) · [🇬🇧 English guide](README_EN.md) · [Yayın öncesi kontrol listesi](docs/YAYIN_ONCESI_KONTROL_TR.md)
+> **Proje durumu:** Yerel ortamda test edilmiş portföy/pilot uygulamasıdır; ticari kullanım için üretim ortamı, güvenlik, gizlilik ve operasyon kontrolleri gerektirir. Ödeme yöntemi kapıda nakittir; online kartla ödeme bulunmaz.
 
-**Stack:** Python 3.13 · FastAPI · SQLAlchemy · SQLite · HTML/CSS · JavaScript · Pytest · GitHub Actions.
+## 🚀 Özellikler
 
-**Current status:** Locally testable pilot software, **not** a production-certified ecommerce service. Sample menu prices, images and content must be reviewed by the real business. Payments are cash on delivery; no online card processing is implemented.
+**Müşteri arayüzü**
+- 6 kategoride 45 örnek ürün; ürün fotoğrafları, arama, filtreleme, sıralama, kampanyalar ve öne çıkan lezzetler
+- Sepete ekleme/çıkarma, adet değiştirme; fiyatların ve toplam tutarın sunucu tarafında hesaplanması
+- Sipariş formu, asgari sipariş tutarı, teslimat ücreti ve isteğe bağlı teslimat bölgesi kontrolü
+- Sipariş kodu ve siparişte kullanılan telefon numarasıyla durum sorgulama
+- İletişim formu, işletme bilgileri ve sosyal medya bağlantıları
 
-## Running locally
+**Yönetici paneli**
+- Kurulumda belirlenen şifreyle yönetici girişi; hazır yönetici şifresi bulunmaz
+- Ürün, kategori, fiyat, indirim, stok, rozet ve görsel yönetimi
+- Gelen siparişleri görüntüleme, sipariş durumunu değiştirme ve CSV çıktısı
+- İşletme bilgileri, ana sayfa görselleri, teslimat bölgeleri ve sipariş alımı ayarları
+- Yönetici paneli açıkken isteğe bağlı tarayıcı bildirimleri
+
+## 🛠️ Kullanılan Teknolojiler
+
+| Katman | Teknolojiler |
+|---|---|
+| Backend | Python, FastAPI, SQLAlchemy, Pydantic |
+| Veritabanı | SQLite |
+| Frontend | HTML, CSS, JavaScript |
+| Test ve CI | Pytest, GitHub Actions |
+| Görsel işleme | Pillow |
+
+## 💻 Windows'ta Kurulum
 
 ```powershell
-cd "C:\VS CODE PROJE\Pideci-Sitesi"
-.\KURULUM_WINDOWS.bat   # First time only; creates admin credentials interactively
+git clone https://github.com/fathylmaz/pideci-fullstack.git
+cd pideci-fullstack
+.\KURULUM_WINDOWS.bat
 .\BASLAT_WINDOWS.bat
 ```
 
-- Customer: http://127.0.0.1:8000
-- Admin: http://127.0.0.1:8000/admin
-- Tests: `.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt`, then `.\.venv\Scripts\python.exe -m pytest -q`
-- Admin default login name: `admin`; **there is no built-in password**.
+İlk kurulum yönetici şifresi oluşturulmasını ister (en az 12 karakter). **Varsayılan şifre yoktur.** Daha önce kurulmuş bir uygulamada ilk kurulum komutunu yeniden çalıştırmayın.
 
-**Privacy:** Never commit `data/`, `.venv/`, `.env`, `backups/`, customer records, credentials, or unredacted screenshots. The `.gitignore` excludes the most common secrets and runtime data, but inspect `git status` before publishing.
+- **Müşteri sitesi:** http://127.0.0.1:8000
+- **Yönetici paneli:** http://127.0.0.1:8000/admin
 
-## Core features
+## ✅ Testler
 
-- Categories, 45 sample products, local product photos, search, sorting, featured items, promotions and stock status.
-- Cart, address/phone order requests, minimum order, delivery fee and optional delivery-zone restriction.
-- Order reference and status lookup (reference **plus the ordering phone number**); no customer address exposed via status endpoint.
-- Admin sign-in, product/category CRUD, image upload, order workflow, CSV export, customer messages, hero/logo/content editing, social links, and browser notifications while the panel is open.
-- Automated API tests, SQLite backup utility, installation/update guides, responsive UI.
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\python.exe -m pytest -q
+node --check web\js\site.js
+node --check web\js\admin.js
+```
 
-## Publishing
+Projede API ve iş kurallarına yönelik otomatik testler bulunur. GitHub Actions üzerinden Python testleri ve JavaScript sözdizimi kontrolleri çalıştırılır.
 
-This repository is a **portfolio/pilot project**. Production use requires HTTPS, domain/hosting configuration, data-retention and privacy review, backup restore drills, monitoring, security tests, reliable notification delivery and business/consumer-law checks. See the checklist above.
+## 🔐 Güvenlik ve Yayın Notları
+
+`.env`, `data/`, `backups/`, müşteri kayıtları, yönetici şifreleri ve kişisel bilgi içeren ekran görüntüleri GitHub'a eklenmemelidir. İşletmede gerçek kullanım öncesinde HTTPS, gizlilik/KVKK süreçleri, yedek geri yükleme, izleme, bildirim güvenilirliği ve ek güvenlik testleri gerekir.
+
+📖 [Ayrıntılı Türkçe kurulum ve kullanım rehberi](README_TR.md) · [Yayın öncesi kontrol listesi](docs/YAYIN_ONCESI_KONTROL_TR.md) · [Değişiklik geçmişi](CHANGELOG.md)
 
 <!-- PIDECI_GALLERY_V1 -->
 
 ---
 
-## 📸 Screenshots | Ekran Görüntüleri
+## 📸 Ekran Görüntüleri
 
-### Customer Experience | Müşteri Arayüzü
+### Müşteri Arayüzü
 
-| Homepage | Product Menu |
+| Ana Sayfa | Ürün Menüsü |
 |:---:|:---:|
 | <img src="docs/screenshots/01-home.png" width="450"> | <img src="docs/screenshots/02-menu.png" width="450"> |
 
-| Featured Products | Shopping Cart |
+| Öne Çıkan Lezzetler | Sepet |
 |:---:|:---:|
 | <img src="docs/screenshots/03-featured.png" width="450"> | <img src="docs/screenshots/04-cart.png" width="450"> |
 
-| Checkout | Order Tracking |
+| Sipariş Formu | Sipariş Takibi |
 |:---:|:---:|
 | <img src="docs/screenshots/05-checkout.png" width="450"> | <img src="docs/screenshots/06-tracking.png" width="450"> |
 
-### Admin Dashboard | Yönetici Paneli
+### Yönetici Paneli
 
-| Dashboard | Product Management |
+| Genel Bakış | Ürün Yönetimi |
 |:---:|:---:|
 | <img src="docs/screenshots/07-admin-dashboard.png" width="450"> | <img src="docs/screenshots/08-admin-products.png" width="450"> |
 
-| Product Editor | Order Management |
+| Ürün Düzenleme | Sipariş Yönetimi |
 |:---:|:---:|
 | <img src="docs/screenshots/09-admin-product-edit.png" width="450"> | <img src="docs/screenshots/10-admin-orders.png" width="450"> |
 
-**Business Settings | İşletme Ayarları**
+**İşletme Ayarları**
 
 <img src="docs/screenshots/11-admin-settings.png" width="700">
 
-### Responsive Design | Mobil Arayüz
+### Mobil Arayüz
 
-| Mobile Homepage | Mobile Menu | Mobile Cart |
+| Mobil Ana Sayfa | Mobil Menü | Mobil Sepet |
 |:---:|:---:|:---:|
 | <img src="docs/screenshots/12-mobile-home.png" width="250"> | <img src="docs/screenshots/13-mobile-menu.png" width="250"> | <img src="docs/screenshots/14-mobile-cart.png" width="250"> |
 
