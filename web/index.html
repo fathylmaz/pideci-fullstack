@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e84242">
+  <meta name="description" content="Taş fırından sıcak pide, lahmacun ve tatlılar. Menümüzü inceleyin ve online sipariş verin.">
+  <title>Pideci | Fırından Sofranıza</title>
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/site.css?v=4.0.1">
+  <script src="/js/site.js?v=4" defer></script>
+</head>
+<body>
+  <header class="header" id="top">
+    <a href="#anasayfa" class="logo" aria-label="Ana sayfa"><img src="/images/logo.png" alt="Pideci logosu" id="site-logo"></a>
+    <nav class="navbar" id="site-nav" aria-label="Ana menü">
+      <a href="#anasayfa" class="active">Ana Sayfa</a>
+      <a href="#menu">Menümüz</a>
+      <a href="#products">Öne Çıkanlar</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+    <div class="buttons">
+      <button id="search-btn" type="button" aria-label="Ürün ara"><i class="fas fa-search"></i></button>
+      <button id="cart-btn" type="button" aria-label="Sepeti görüntüle"><i class="fas fa-shopping-cart"></i><span id="cart-count" class="cart-count">0</span></button>
+      <button id="menu-btn" type="button" aria-label="Menüyü aç" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <main>
+    <section id="anasayfa" class="home">
+      <div class="hero-shade"></div>
+      <div class="content">
+        <span class="eyebrow"><i class="fas fa-fire-flame-curved"></i> TAŞ FIRIN LEZZETLERİ</span>
+        <h1 id="hero-title">DAYANILMAZ LEZZET ŞİMDİ KAPINDA</h1>
+        <p id="hero-text">Dilediğin lezzeti sepetine ekle, siparişini ver ve fırından çıktığı gibi kapına gelsin.</p>
+        <div class="hero-actions"><a class="btn" href="#menu">Şimdi Sipariş Ver <i class="fas fa-arrow-right"></i></a><a class="hero-secondary" href="#products">Öne Çıkanları Keşfet <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        <div class="hero-highlights"><span><i class="fas fa-fire-burner"></i> Taş Fırın Lezzeti</span><span><i class="fas fa-leaf"></i> Özenle Hazırlanır</span><span><i class="fas fa-basket-shopping"></i> Kolay Sipariş</span></div>
+      </div>
+    </section>
+    <section class="menu" id="menu">
+      <div class="section-top"><div><p class="section-label">FIRINDAN SOFRANIZA</p><h2 class="heading">Bizim <span>Menümüz</span></h2></div><p class="section-subtitle">Sevdiğin lezzetleri keşfet, tek tıkla sepete ekle.</p></div>
+      <div class="menu-toolbar">
+        <div class="category-chips" id="category-chips" aria-label="Menü kategorileri"><button type="button" class="chip active">Tümü</button></div>
+        <div class="menu-tools"><label class="menu-search"><i class="fas fa-search"></i><input id="product-search" type="search" autocomplete="off" placeholder="Menüde ürün ara..." aria-label="Ürün ara"></label>
+        <select id="product-sort" class="menu-sort" aria-label="Ürünleri sırala"><option value="default">Önerilen Sıralama</option><option value="price-asc">Fiyat: Artan</option><option value="price-desc">Fiyat: Azalan</option><option value="name">İsme Göre</option></select></div>
+      </div>
+      <div class="menu-info"><span id="menu-meta">Ürünlerimiz</span><span><i class="fas fa-circle-check"></i> Güncel menü · Yönetici panelinden düzenlenebilir</span></div>
+      <div class="box-container" id="menu-grid" aria-live="polite"><p class="loading-line">Menü yükleniyor...</p></div>
+      <button class="show-more-btn" id="show-more" type="button" hidden><i class="fas fa-chevron-down"></i> Daha Fazla Lezzet Göster</button>
+    </section>
+    <section id="deals" class="deals-section" hidden>
+      <div class="section-top"><div><p class="section-label">FIRSATLARI KAÇIRMA</p><h2 class="heading">Özel <span>Teklifler</span></h2></div><p class="section-subtitle">İndirimli ürünleri menümüzde keşfet.</p></div>
+      <div class="deals-grid" id="deals-grid"></div>
+    </section>
+    <section class="products" id="products">
+      <p class="section-label">MÜŞTERİLERİMİZİN FAVORİLERİ</p><h2 class="heading">Öne Çıkan <span>Lezzetler</span></h2>
+      <div class="box-container" id="featured-grid"></div>
+    </section>
+    <section class="pairings-section" id="pairings">
+      <div class="pairings-heading"><div><p class="section-label">MENÜYÜ TAMAMLA</p><h2 class="heading">Tatlı & <span>İçecek Molası</span></h2><p>Lezzetli bir yemeği, sıcacık bir tatlı ve serinletici bir içecekle tamamla.</p></div><a href="#menu" class="pairings-link" id="pairing-jump">Tüm Çeşitlere Göz At <i class="fas fa-arrow-right"></i></a></div>
+      <div id="pairings-grid" class="pairings-grid"></div>
+    </section>
+    <section class="about" id="about">
+      <p class="section-label">BİZİM HİKÂYEMİZ</p><h2 class="heading">Hakkımız<span>da</span></h2>
+      <div class="row">
+        <div class="image"><img id="about-image" src="/images/bafra.jpg" alt="Fırından pide" loading="lazy"></div>
+        <div class="content"><h3 id="about-title">Bafra Pidesinin Tarihçesini Biliyor musunuz?</h3><p id="about-text">Karadeniz'in zengin pide geleneğini sofralarınıza taşıyoruz.</p><a href="#menu" class="btn">Lezzetleri Keşfet</a></div>
+      </div>
+    </section>
+    <section class="review" id="service">
+      <p class="section-label">SİPARİŞİN ÇOK KOLAY</p><h2 class="heading">Nasıl <span>Çalışır?</span></h2>
+      <div class="box-container steps">
+        <div class="box"><div class="step-icon"><i class="fas fa-utensils"></i></div><h3>1. Lezzetini Seç</h3><p>Menümüzü keşfet, istediğin ürünleri sepetine ekle.</p></div>
+        <div class="box"><div class="step-icon"><i class="fas fa-basket-shopping"></i></div><h3>2. Siparişini Ver</h3><p>Bilgilerini gir ve kapıda ödeme seçeneğiyle siparişini oluştur.</p></div>
+        <div class="box"><div class="step-icon"><i class="fas fa-motorcycle"></i></div><h3>3. Afiyet Olsun</h3><p>İşletmemiz siparişini onaylar ve teslimat için hazırlar.</p></div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <p class="section-label">HER ZAMAN BURADAYIZ</p><h2 class="heading">Bize <span>Ulaşın</span></h2>
+      <div class="row contact-row">
+        <div class="contact-info">
+          <h3>Merhaba de!</h3><p>Siparişin veya menümüz hakkında soruların mı var? Bize mesaj bırak.</p>
+          <div class="info-item"><i class="fas fa-phone"></i><div><b>Telefon</b><span id="contact-phone">İşletme tarafından eklenecek</span></div></div>
+          <div class="info-item"><i class="fas fa-location-dot"></i><div><b>Adres</b><span id="contact-address">İşletme tarafından eklenecek</span></div></div>
+          <div class="info-item"><i class="far fa-clock"></i><div><b>Çalışma Saatleri</b><span id="contact-hours">Bilgi için arayın</span></div></div>
+          <div class="info-item" id="delivery-areas-info" hidden><i class="fas fa-motorcycle"></i><div><b>Hizmet Verilen Bölgeler</b><span id="contact-delivery-areas"></span></div></div>
+          <a id="instagram-link" class="social-link" href="#" target="_blank" rel="noopener noreferrer" hidden><i class="fab fa-instagram"></i> Instagram'da bizi takip edin</a>
+          <a id="facebook-link" class="social-link" href="#" target="_blank" rel="noopener noreferrer" hidden><i class="fab fa-facebook"></i> Facebook</a>
+        </div>
+        <form id="contact-form">
+          <h3>İletişim Formu</h3>
+          <div class="inputBox"><i class="fas fa-user"></i><input name="name" required maxlength="100" placeholder="Adınız ve soyadınız" autocomplete="name"></div>
+          <div class="inputBox"><i class="fas fa-envelope"></i><input type="email" name="email" required maxlength="160" placeholder="E-posta adresiniz" autocomplete="email"></div>
+          <div class="inputBox"><i class="fas fa-phone"></i><input name="phone" maxlength="24" placeholder="Telefon (isteğe bağlı)" autocomplete="tel"></div>
+          <div class="inputBox"><i class="fas fa-comment"></i><textarea name="message" minlength="10" maxlength="2000" required placeholder="Mesajınız"></textarea></div>
+          <button type="submit" class="btn">Mesaj Gönder</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <section class="order-lookup-section" aria-labelledby="lookup-heading">
+    <div class="order-lookup-card">
+      <div><p class="section-label">SİPARİŞİNİZİN DURUMU</p><h2 id="lookup-heading">Sipariş Sorgula</h2><p>Size verilen kod ve siparişte kullandığınız telefon ile durumunu öğrenin.</p></div>
+      <form id="status-form"><label>Sipariş Kodu<input name="code" placeholder="PD-XXXXXXXXXX" maxlength="13" required autocomplete="off"></label>
+      <label>Telefon<input name="phone" type="tel" placeholder="05xx xxx xx xx" required></label>
+      <button class="btn" type="submit" id="status-check">Sorgula</button></form>
+      <p id="status-result" role="status" aria-live="polite" hidden></p>
+    </div>
+  </section>
+  <footer class="footer">
+    <a href="#anasayfa" class="footer-brand"><img id="footer-logo" src="/images/logo.png" alt="Pideci logosu"><span>Fırından sofranıza, sevgiyle.</span></a>
+    <div class="links"><a href="#anasayfa">Ana Sayfa</a><a href="#menu">Menümüz</a><a href="#pairings">Tatlı & İçecek</a><a href="#about">Hakkımızda</a><a href="#contact">İletişim</a></div>
+    <p class="credit">© <span id="year"></span> <span id="footer-name">Pideci</span> · Tüm hakları saklıdır.</p>
+  </footer>
+  <div class="backdrop" id="cart-backdrop" hidden></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="section-label">SİPARİŞİNİ HAZIRLA</p><h2 id="cart-title">Sepetim</h2></div><button id="close-cart" type="button" class="plain-icon" aria-label="Sepeti kapat"><i class="fas fa-xmark"></i></button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-summary"><div><span>Ara Toplam</span><strong id="cart-subtotal">₺0,00</strong></div><div><span>Teslimat</span><strong id="cart-delivery">₺0,00</strong></div><div class="total"><span>Toplam</span><strong id="cart-total">₺0,00</strong></div><small id="min-order-note"></small><button id="checkout-open" type="button" class="btn checkout-button">Siparişi Tamamla <i class="fas fa-arrow-right"></i></button></div>
+  </aside>
+  <dialog class="checkout-modal" id="checkout-dialog" aria-labelledby="checkout-title">
+    <form id="checkout-form"><div class="dialog-heading"><div><p class="section-label">SON ADIM</p><h2 id="checkout-title">Sipariş Bilgileri</h2></div><button type="button" id="checkout-close" class="plain-icon" aria-label="Kapat"><i class="fas fa-xmark"></i></button></div>
+      <p>Bilgilerini doldur. Siparişin işletmeye iletilecek; ödeme kapıda nakit olarak yapılacak.</p>
+      <label>Ad Soyad <input name="customer_name" required minlength="2" maxlength="100" autocomplete="name"></label>
+      <label>Telefon <input name="phone" type="tel" required minlength="10" maxlength="24" autocomplete="tel" placeholder="05xx xxx xx xx"></label>
+      <label id="delivery-area-field" hidden>Teslimat Bölgesi
+        <select name="delivery_area" id="delivery-area-select"><option value="">Bölge seçin</option></select>
+      </label>
+      <label>Teslimat Adresi <textarea name="address" required minlength="10" maxlength="500" autocomplete="street-address"></textarea></label>
+      <label>Sipariş Notu <textarea name="note" maxlength="500" placeholder="Varsa eklemek istediğin not..."></textarea></label>
+      <div class="payment-note"><i class="fas fa-money-bill-wave"></i> Ödeme Yöntemi: Kapıda Nakit</div>
+      <button class="btn" type="submit" id="order-submit">Siparişi Onayla</button>
+    </form>
+  </dialog>
+  <dialog id="receipt-dialog" class="checkout-modal" aria-labelledby="receipt-title">
+    <div class="dialog-heading"><div><p class="section-label">SİPARİŞ TALEBİ ALINDI</p><h2 id="receipt-title">Sipariş Numaranız</h2></div><button class="plain-icon" id="receipt-close" aria-label="Kapat" type="button">×</button></div>
+    <p id="receipt-code" class="receipt-code"></p><p id="receipt-summary" class="receipt-summary"></p>
+    <p class="receipt-disclaimer">Siparişiniz işletmeye iletildi; kabul edildiği anlamına gelmez. Lütfen numaranızı saklayın.</p>
+    <button type="button" id="copy-order-code" class="btn">Sipariş Kodunu Kopyala</button>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

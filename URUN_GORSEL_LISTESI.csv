@@ -1,0 +1,46 @@
+﻿Sıra,Ürün,Kategori,Uygulama dosyası,Dosya adı,Çözünürlük,Kaynak
+1,Kaşarlı Pide,Pide,web/images/v2/pide-kasarli.webp,Kaşarlı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+2,Kıymalı Pide,Pide,web/images/v2/pide-kiymali.webp,Kıymalı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+3,Kuşbaşılı Pide,Pide,web/images/v2/pide-kusbasili.webp,Kuşbaşılı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+4,Kuşbaşılı Kaşarlı Pide,Pide,web/images/v2/pide-kusbasili-kasarli.webp,Kuşbaşılı Kaşarlı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+5,Karışık Pide,Pide,web/images/v2/pide-karisik.webp,Karışık Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+6,Sucuklu Kaşarlı Pide,Pide,web/images/v2/pide-sucuklu.webp,Sucuklu Kaşarlı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+7,Pastırmalı Kaşarlı Pide,Pide,web/images/v2/pide-pastirmali.webp,Pastırmalı Kaşarlı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+8,Kavurmalı Kaşarlı Pide,Pide,web/images/v2/pide-kavurmali.webp,Kavurmalı Kaşarlı Pide.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+9,Yumurtalı Kaşarlı Pide,Pide,web/images/v2/pide-yumurtali.webp,Yumurtalı Kaşarlı Pide.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+10,Ispanaklı Kaşarlı Pide,Pide,web/images/v2/pide-ispanakli.webp,Ispanaklı Kaşarlı Pide.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+11,Mantarlı Kaşarlı Pide,Pide,web/images/v2/pide-mantarli.webp,Mantarlı Kaşarlı Pide.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+12,Sebzeli Pide,Pide,web/images/v2/pide-sebzeli.webp,Sebzeli Pide.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+13,Tavuklu Kaşarlı Pide,Pide,web/images/v2/pide-tavuklu.webp,Tavuklu Kaşarlı Pide.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+14,Bafra Pidesi,Pide,web/images/v2/pide-bafra.webp,Bafra Pidesi.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+15,Cantık,Pide,web/images/v2/pide-cantik.webp,Cantık.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+16,Lahmacun,Lahmacun,web/images/v2/lahmacun.webp,Lahmacun.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+17,Acılı Lahmacun,Lahmacun,web/images/v2/lahmacun-acili.webp,Acılı Lahmacun.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+18,Fındık Lahmacun,Lahmacun,web/images/v2/lahmacun-findik.webp,Fındık Lahmacun.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+19,Kaşarlı Lahmacun,Lahmacun,web/images/v2/lahmacun-kasarli.webp,Kaşarlı Lahmacun.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+20,Çıtır Lahmacun Menü,Lahmacun,web/images/v2/lahmacun-menu.webp,Çıtır Lahmacun Menü.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+21,Mercimek Çorbası,Çorba,web/images/v2/corba-mercimek.webp,Mercimek Çorbası.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+22,Ezogelin Çorbası,Çorba,web/images/v2/corba-ezogelin.webp,Ezogelin Çorbası.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+23,Tavuk Suyu Çorbası,Çorba,web/images/v2/corba-tavuk.webp,Tavuk Suyu Çorbası.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+24,İşkembe Çorbası,Çorba,web/images/v2/corba-iskembe.webp,İşkembe Çorbası.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+25,Künefe,Tatlı,web/images/v2/tatli-kunefe.webp,Künefe.webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+26,Sütlaç,Tatlı,web/images/v2/tatli-sutlac.webp,Sütlaç.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+27,Fırın Sütlaç,Tatlı,web/images/v2/tatli-firin-sutlac.webp,Fırın Sütlaç.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+28,Katmer,Tatlı,web/images/v2/tatli-katmer.webp,Katmer.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+29,Baklava Porsiyon,Tatlı,web/images/v2/tatli-baklava.webp,Baklava Porsiyon.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+30,Ayran (30 cl),İçecek,web/images/v2/icecek-ayran.webp,Ayran (30 cl).webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+31,Büyük Ayran (1 L),İçecek,web/images/v2/icecek-ayran-buyuk.webp,Büyük Ayran (1 L).webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+32,Kola (33 cl),İçecek,web/images/v2/icecek-kola.webp,Kola (33 cl).webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+33,Fanta (33 cl),İçecek,web/images/v2/icecek-fanta.webp,Fanta (33 cl).webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+34,Şalgam (30 cl),İçecek,web/images/v2/icecek-salgam.webp,Şalgam (30 cl).webp,1200x780,Bağımsız yüksek çözünürlüklü üretim
+35,Soda (20 cl),İçecek,web/images/v2/icecek-soda.webp,Soda (20 cl).webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+36,Su (50 cl),İçecek,web/images/v2/icecek-su.webp,Su (50 cl).webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+37,Çay,İçecek,web/images/v2/icecek-cay.webp,Çay.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+38,Mevsim Salata,Yan Ürünler,web/images/v2/yan-salata.webp,Mevsim Salata.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+39,Çoban Salata,Yan Ürünler,web/images/v2/yan-coban.webp,Çoban Salata.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+40,Turşu Tabağı,Yan Ürünler,web/images/v2/yan-tursu.webp,Turşu Tabağı.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+41,Acılı Ezme,Yan Ürünler,web/images/v2/yan-ezme.webp,Acılı Ezme.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+42,Ekstra Kaşar,Yan Ürünler,web/images/v2/yan-kasar.webp,Ekstra Kaşar.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+43,Ekstra Sucuk,Yan Ürünler,web/images/v2/yan-sucuk.webp,Ekstra Sucuk.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+44,Ekstra Ayran Menü,Yan Ürünler,web/images/v2/yan-ayran.webp,Ekstra Ayran Menü.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)
+45,Ekstra Yumurta,Yan Ürünler,web/images/v2/yan-yumurta.webp,Ekstra Yumurta.webp,1200x780,Katalog kolajından ayrılmış ve büyütülmüş (kaynak ayrıntısı sınırlı)

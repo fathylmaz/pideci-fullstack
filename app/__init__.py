@@ -1,0 +1,1 @@
+"""Pideci Sitesi application package."""

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e84242">
+ <title>Pideci | Yönetim Paneli</title>
+ <link rel="icon" href="/images/logo.png">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+ <link rel="stylesheet" href="/styles/admin.css?v=4"><script defer src="/js/admin.js?v=4"></script>
+</head>
+<body>
+ <main id="login-screen" class="login-screen" hidden>
+  <form class="login-card" id="login-form">
+   <img src="/images/logo.png" alt="Pideci logosu"><p class="eyebrow">İŞLETME YÖNETİMİ</p><h1>Tekrar hoş geldin.</h1><p>Ürünlerin, siparişlerin ve siten tek bir panelde.</p>
+   <label>Kullanıcı Adı<input name="username" required minlength="3" autocomplete="username" placeholder="admin"></label>
+   <label>Şifre<input type="password" name="password" required autocomplete="current-password" placeholder="••••••••••••"></label>
+   <button type="submit" class="primary-button" id="login-button">Yönetim Paneline Giriş <i class="fas fa-arrow-right"></i></button>
+   <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Müşteri sitesine dön</a>
+  </form>
+ </main>
+ <div id="admin-app" class="admin-app" hidden>
+  <aside class="sidebar" id="sidebar">
+   <a class="brand" href="/" target="_blank" rel="noopener"><img src="/images/logo.png" alt="Pideci"><div><b>Pideci</b><small>Yönetim Paneli</small></div></a>
+   <p class="sidebar-caption">İŞLETME</p>
+   <nav id="admin-nav" aria-label="Yönetim navigasyonu">
+    <button type="button" data-section="overview" class="nav-item selected"><i class="fas fa-chart-pie"></i> Genel Bakış</button>
+    <button type="button" data-section="products" class="nav-item"><i class="fas fa-utensils"></i> Ürün Yönetimi</button>
+    <button type="button" data-section="categories" class="nav-item"><i class="fas fa-layer-group"></i> Kategoriler</button>
+    <button type="button" data-section="orders" class="nav-item"><i class="fas fa-clipboard-list"></i> Siparişler</button>
+    <button type="button" data-section="messages" class="nav-item"><i class="fas fa-envelope"></i> Mesajlar</button>
+    <button type="button" data-section="settings" class="nav-item"><i class="fas fa-gear"></i> Site Ayarları</button>
+   </nav>
+   <div class="sidebar-bottom"><a href="/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Siteyi Görüntüle</a><button id="logout-btn" type="button"><i class="fas fa-right-from-bracket"></i> Çıkış Yap</button></div>
+  </aside>
+  <div class="admin-main">
+   <header class="topbar"><button id="sidebar-toggle" type="button" aria-label="Menüyü aç"><i class="fas fa-bars"></i></button><div class="breadcrumb">YÖNETİM <span>/</span> <strong id="breadcrumb-title">Genel Bakış</strong></div><div class="topbar-right"><span class="online-dot"></span><span>İşletme Paneli</span><div class="avatar">Y</div></div></header>
+   <div class="workspace">
+    <div class="page-heading"><div><p class="eyebrow">İŞİNİZ KONTROL ALTINDA</p><h1 id="page-title">Genel Bakış</h1><p id="page-subtitle">İşletmenizin son durumuna göz atın.</p></div><div class="page-heading-actions"><button type="button" class="secondary-button" id="notifications-enable" title="Tarayıcı bildirimlerini etkinleştir">Bildirimleri Aç</button><span id="today-label"></span></div></div>
+    <div id="admin-live-notice" class="live-notice" role="status" aria-live="polite" hidden>
+      <span><i class="fas fa-bell"></i> <strong>Yeni sipariş geldi!</strong> Siparişler bölümünü kontrol edin.</span>
+      <button type="button" data-section="orders" class="secondary-button">Siparişlere Git</button>
+    </div>
+    <section id="section-overview" class="panel-section">
+     <div class="stats-grid" id="stats-grid"></div>
+     <div class="panel"><div class="panel-head"><div><h2>Son Siparişler</h2><p>En son gelen siparişlerin kısa özeti</p></div><button type="button" class="text-button" data-section="orders">Tüm Siparişler <i class="fas fa-arrow-right"></i></button></div><div id="recent-orders"></div></div>
+    </section>
+    <section id="section-products" class="panel-section" hidden>
+     <div class="panel"><div class="panel-head"><div><h2>Ürünler</h2><p>Fiyat, indirim, etiket, fotoğraf, stok, vitrin ve görünürlük ayarları</p></div><button type="button" id="new-product" class="primary-button"><i class="fas fa-plus"></i> Yeni Ürün Ekle</button></div>
+      <div class="table-filters product-filters"><input id="admin-product-search" type="search" placeholder="Ürün veya kategori ara..." aria-label="Ürün ara">
+      <select id="admin-category-filter" aria-label="Kategori filtresi"><option value="all">Tüm Kategoriler</option></select>
+      <select id="admin-status-filter" aria-label="Durum filtresi"><option value="all">Tüm Durumlar</option><option value="active">Yayında</option><option value="inactive">Arşivde</option><option value="out">Stokta Yok</option><option value="campaign">Kampanyalı</option></select>
+      <span id="product-count"></span></div><div class="table-scroll"><table><thead><tr><th>Ürün</th><th>Kategori</th><th>Fiyat</th><th>Etiket</th><th>Stok</th><th>Durum</th><th>İşlemler</th></tr></thead><tbody id="products-table"></tbody></table></div>
+     </div>
+    </section>
+    <section id="section-categories" class="panel-section" hidden>
+     <div class="panel"><div class="panel-head"><div><h2>Kategoriler</h2><p>Menü kategorilerini düzenleyin veya yenilerini oluşturun</p></div><button type="button" id="new-category" class="primary-button"><i class="fas fa-plus"></i> Kategori Ekle</button></div><div class="table-scroll"><table><thead><tr><th>Kategori</th><th>Sıralama</th><th>Görünürlük</th><th>İşlemler</th></tr></thead><tbody id="categories-table"></tbody></table></div></div>
+    </section>
+    <section id="section-orders" class="panel-section" hidden>
+     <div class="panel"><div class="panel-head"><div><h2>Sipariş Listesi</h2><p>Gelen siparişleri takip edin ve durumlarını güncelleyin</p></div><div class="panel-head-buttons"><a href="/api/admin/orders/export" class="secondary-button" download="pideci-siparisler.csv"><i class="fas fa-file-csv"></i> CSV İndir</a><button type="button" id="refresh-orders" class="secondary-button"><i class="fas fa-rotate"></i> Yenile</button></div></div><div class="table-filters"><select id="order-filter"><option value="all">Tüm Siparişler</option><option value="new">Yeni</option><option value="confirmed">Onaylandı</option><option value="preparing">Hazırlanıyor</option><option value="on_the_way">Yolda</option><option value="delivered">Teslim Edildi</option><option value="cancelled">İptal</option></select><span id="order-count"></span></div><div id="orders-list"></div></div>
+    </section>
+    <section id="section-messages" class="panel-section" hidden>
+     <div class="panel"><div class="panel-head"><div><h2>Gelen Mesajlar</h2><p>Müşterilerin iletişim formundan gönderdiği mesajlar</p></div><button type="button" id="refresh-messages" class="secondary-button"><i class="fas fa-rotate"></i> Yenile</button></div><div id="messages-list"></div></div>
+    </section>
+    <section id="section-settings" class="panel-section" hidden>
+     <div class="panel"><div class="panel-head"><div><h2>Site İçeriği ve İşletme Bilgileri</h2><p>Bu değişiklikler müşteri sitesinde doğrudan görünür</p></div></div>
+      <form id="settings-form" class="settings-form">
+       <h3><i class="fas fa-store"></i> İşletme Bilgileri</h3><div class="field-grid">
+       <label>İşletme Adı<input name="business_name" required maxlength="100"></label>
+       <label>Telefon<input name="phone" maxlength="30" placeholder="05xx xxx xx xx"></label>
+       <label class="wide">Adres<textarea name="address" maxlength="400"></textarea></label>
+       <label>Çalışma Saatleri<input name="opening_hours" maxlength="200" placeholder="Her gün 11:00–22:00"></label>
+       <label>Instagram Adresi<input type="url" name="instagram_url" maxlength="300" placeholder="https://www.instagram.com/..." /></label>
+       <label>Facebook Adresi<input type="url" name="facebook_url" maxlength="300" placeholder="https://www.facebook.com/..." /></label>
+       </div>
+       <h3><i class="fas fa-image"></i> Ana Sayfa</h3><div class="field-grid">
+       <label class="wide">Manşet Başlık<input name="hero_title" required maxlength="160"></label>
+       <label class="wide">Manşet Açıklama<textarea name="hero_text" required maxlength="500"></textarea></label>
+       <label>Ana Sayfa Görseli <input type="file" id="hero-file" accept="image/jpeg,image/png,image/webp"><small>Yeni bir görsel seçip "Ayarları Kaydet"e basın</small><img class="setting-preview" id="hero-preview" src="/images/arkaplan1.webp" alt="Mevcut ana sayfa görseli"></label>
+       <label>Logo <input type="file" id="logo-file" accept="image/jpeg,image/png,image/webp"><small>Şeffaf arka planlı PNG önerilir</small><img class="setting-preview" id="logo-preview" src="/images/logo.png" alt="Mevcut logo"></label>
+       </div>
+       <h3><i class="fas fa-book-open"></i> Hakkımızda</h3><div class="field-grid"><label class="wide">Bölüm Başlığı<input name="about_title" maxlength="160"></label><label class="wide">Bölüm Metni<textarea name="about_text" maxlength="1000" rows="4"></textarea></label><label>Hakkımızda Görseli<input type="file" id="about-file" accept="image/jpeg,image/png,image/webp"><img class="setting-preview" id="about-preview" src="/images/bafra.jpg" alt="Mevcut hakkımızda görseli"></label></div>
+       <h3><i class="fas fa-motorcycle"></i> Sipariş Ayarları</h3><div class="field-grid">
+       <label class="wide">Teslimat Bölgeleri (her satıra bir semt/mahalle)
+         <textarea name="delivery_areas" rows="5" maxlength="900" placeholder="Merkez\nGüneşli Mahallesi"></textarea>
+         <small>Boş bırakırsanız bölge sınırı uygulanmaz. Bölge eklediğinizde müşteri sipariş verirken birini seçmek zorundadır.</small>
+       </label><label>Teslimat Ücreti (₺)<input type="number" name="delivery_fee" min="0" max="100000" step="0.01" required></label><label>Minimum Sipariş (₺)<input type="number" name="min_order" min="0" max="100000" step="0.01" required></label><label class="wide checkbox-field"><input type="checkbox" name="ordering_enabled"> Müşteri sitesinden online sipariş alınabilsin</label></div>
+       <button class="primary-button" type="submit" id="save-settings"><i class="fas fa-check"></i> Ayarları Kaydet</button>
+      </form>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+ <dialog id="product-dialog" class="form-dialog">
+  <form id="product-form"><div class="dialog-head"><div><p class="eyebrow">MENÜ YÖNETİMİ</p><h2 id="product-dialog-title">Yeni Ürün</h2></div><button type="button" class="close-dialog" data-close-dialog aria-label="Kapat">×</button></div>
+   <input type="hidden" name="id"><div class="field-grid">
+    <label class="wide">Ürün Adı<input name="name" required minlength="2" maxlength="120" placeholder="Örn. Kuşbaşılı Kaşarlı Pide"></label>
+    <label>Kategori<select name="category_id" id="product-category" required></select></label>
+    <label>Sıralama<input name="position" type="number" min="0" max="100000" value="0" required></label>
+    <label>Fiyat (₺)<input name="price" type="number" step="0.01" min="0.01" required placeholder="129.90"></label>
+    <label>Ürün Etiketi<select name="badge" id="product-badge"><option value="">Etiketsiz</option><option>Yeni</option><option>Popüler</option><option>Şefin Seçimi</option><option>Kampanya</option><option>Acılı</option><option>Vejetaryen</option><option>Tatlı Molası</option></select></label>
+    <label>Eski Fiyat (₺) — Opsiyonel<input name="old_price" type="number" step="0.01" min="0.01" placeholder="149.90"></label>
+    <label class="wide">Açıklama<textarea name="description" maxlength="1000" placeholder="Ürün hakkında kısa bilgi"></textarea></label>
+    <label>İçerik / Porsiyon<input name="serving_info" maxlength="120" placeholder="250 gr"></label>
+    <label>Ürün Fotoğrafı <input id="product-image-file" type="file" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG veya WEBP · En fazla 5 MB</small></label>
+    <div class="wide image-preview-wrap"><img id="product-image-preview" src="/images/logo.png" alt="Ürün görseli önizlemesi"></div>
+    <label class="checkbox-field"><input name="is_active" type="checkbox" checked> Sitede göster</label>
+    <label class="checkbox-field"><input name="in_stock" type="checkbox" checked> Stokta / Siparişe açık</label>
+    <label class="checkbox-field"><input name="is_featured" type="checkbox"> Öne çıkanlarda göster</label>
+   </div><div class="dialog-actions"><button type="button" class="secondary-button" data-close-dialog>Vazgeç</button><button type="submit" class="primary-button" id="save-product">Ürünü Kaydet</button></div>
+  </form>
+ </dialog>
+ <dialog id="category-dialog" class="form-dialog small-dialog">
+  <form id="category-form"><div class="dialog-head"><h2 id="category-dialog-title">Kategori Ekle</h2><button type="button" class="close-dialog" data-close-dialog aria-label="Kapat">×</button></div>
+   <input type="hidden" name="id"><label>Kategori Adı<input name="name" required minlength="2" maxlength="60"></label><label>Sıralama<input name="position" type="number" min="0" max="100000" value="0" required></label><label class="checkbox-field"><input type="checkbox" name="is_active" checked> Sitede göster</label>
+   <div class="dialog-actions"><button type="button" class="secondary-button" data-close-dialog>Vazgeç</button><button type="submit" class="primary-button">Kaydet</button></div>
+  </form>
+ </dialog>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
