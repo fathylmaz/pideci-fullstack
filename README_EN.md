@@ -1,4 +1,7 @@
-# Pideci — Restaurant Ordering and Admin Dashboard
+# Pideci | Restaurant Ordering & Management
+
+[![Türkçe](https://img.shields.io/badge/T%C3%BCrk%C3%A7e-T%C3%BCrk%C3%A7e%20Oku-e11d48?style=for-the-badge)](README.md)
+[![GitHub Actions](https://github.com/fathylmaz/pideci-fullstack/actions/workflows/ci.yml/badge.svg)](https://github.com/fathylmaz/pideci-fullstack/actions/workflows/ci.yml)
 
 A full-stack restaurant ordering demo built around the original red/black/white theme. **This is a local pilot**, not a payment-certified, production-ready platform.
 
@@ -45,3 +48,47 @@ Database: `data/pideci.db`; admin-uploaded media: `data/uploads`. Back up both w
 Before deploying publicly: configure HTTPS, secure cookies, privacy notice/consent and data retention, verified restorations, production monitoring, a suitable database and backups, customer/order notifications, as well as legal and security review. See [prelaunch checklist](docs/YAYIN_ONCESI_KONTROL_TR.md).
 
 **Do not commit:** database files, `.env` secrets, private backup ZIPs, uploaded customer data, local virtual environments, unredacted screenshots.
+
+---
+
+<!-- PIDECI_GALLERY_V1 -->
+
+---
+
+## 📸 Screenshots | Ekran Görüntüleri
+
+### Customer Experience | Müşteri Arayüzü
+
+| Homepage | Product Menu |
+|:---:|:---:|
+| <img src="docs/screenshots/01-home.png" width="450"> | <img src="docs/screenshots/02-menu.png" width="450"> |
+
+| Featured Products | Shopping Cart |
+|:---:|:---:|
+| <img src="docs/screenshots/03-featured.png" width="450"> | <img src="docs/screenshots/04-cart.png" width="450"> |
+
+| Checkout | Order Tracking |
+|:---:|:---:|
+| <img src="docs/screenshots/05-checkout.png" width="450"> | <img src="docs/screenshots/06-tracking.png" width="450"> |
+
+### Admin Dashboard | Yönetici Paneli
+
+| Dashboard | Product Management |
+|:---:|:---:|
+| <img src="docs/screenshots/07-admin-dashboard.png" width="450"> | <img src="docs/screenshots/08-admin-products.png" width="450"> |
+
+| Product Editor | Order Management |
+|:---:|:---:|
+| <img src="docs/screenshots/09-admin-product-edit.png" width="450"> | <img src="docs/screenshots/10-admin-orders.png" width="450"> |
+
+**Business Settings | İşletme Ayarları**
+
+<img src="docs/screenshots/11-admin-settings.png" width="700">
+
+### Responsive Design | Mobil Arayüz
+
+| Mobile Homepage | Mobile Menu | Mobile Cart |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/12-mobile-home.png" width="250"> | <img src="docs/screenshots/13-mobile-menu.png" width="250"> | <img src="docs/screenshots/14-mobile-cart.png" width="250"> |
+
+<!-- PIDECI_GALLERY_END -->
